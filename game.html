@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko-kr">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177457334-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-177457334-1');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no, shrink-to-fit=no" />
+    <meta name="HandheldFriendly" content="true">
+    <!-- Title -->
+    <title>Moonsomoon</title>
+
+    <meta name='description'
+      content='문소문 Heard a rumor' />
+    <meta name='keywords'
+        content='문소문' />
+    
+    <meta property="og:type" content="website">
+    <meta property='og:title'
+        content='Moonsomoon' />
+    <meta property='og:description'
+        content='문소문 Heard a rumor' />
+    <meta property='og:image'
+        content='assets/images/og-image.jpg' />
+
+    <!-- <link rel="canonical" href="https://nickname.hwanmoo.kr" /> -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/game.css" rel="stylesheet" type="text/css">
+    
+
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico" />
+
+    <link href="https://vjs.zencdn.net/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.8.2/video.min.js"></script>
+
+    <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
+
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    
+    <div class="mobile-wrap">
+        <div id="toast"></div>
+	    <div class="mobile clearfix" id="game" style="visibility: hidden;" onclick="gameStart()">
+            <div id="back" onclick="zoomout()"></div>
+            <div id="common">
+                <div id="item_slot">
+                    <div id="item_key" class="item"></div>
+                    <div id="item_broom" class="item"></div>
+                    <div id="item_match" class="item"></div>
+                </div>
+                <div id="left_handle" class="handle" onclick="leftRoom()"></div>
+                <div id="right_handle" class="handle" onclick="rightRoom()"></div>
+            </div>
+            <div id="room_1" class="room">
+                <div id="computer" class="click" onclick="zoom('computer')"></div>                
+                <div id="computer_zoom" class="zoom">
+                    <input type="text" maxlength="7" id="answer" onkeyup="answer(this)">
+                </div>
+                <div id="cat_with_key" class="click" onclick="zoom('cat')"></div>
+                <div id="cat_zoom" class="zoom">
+                    <div id="zoomed_cat" class="zoom_objects" onclick="playCatSound()"></div>
+                    <div id="zoomed_key" class="zoom_objects" onclick="getRoom1Key()"></div>
+                </div>
+                <div id="box_closed" class="click" onclick="zoom('box')"></div>
+                <div id="box_opened"></div>
+                <div id="box_zoom" class="zoom">
+                    <div id="zoomed_box_closed" class="zoom_objects" onclick="openRoom1Box()"></div>
+                    <div id="zoomed_box_active" class="zoom_objects active_objects" onclick="openRoom1Box('close')"></div>
+                </div>
+            </div>
+            <div id="room_2" class="room">
+                <div id="closet" class="click" onclick="if(items.indexOf('broom')!==-1){zoom('closet')}"></div>
+                <div id="broom" class="click" onclick="getRoom2Broom()"></div>
+                <div id="candle" class="click" onclick="zoom('candle')"></div>
+                <div id="closet_zoom" class="zoom">
+                    <div id="zoomed_closet" class="zoom_objects" onclick="openRoom2Closet()"></div>
+                    <div id="zoomed_match" class="zoom_objects" onclick="getRoom2Match()"></div>
+                </div>
+                <div id="candle_zoom" class="zoom">
+                    <div id="zoomed_candle" class="zoom_objects" onclick="lightRoom2Candle()"></div>
+                    <div id="zoomed_candle_active" class="zoom_objects active_objects"></div>
+                </div>
+                <div id="sofa" class="click" onclick="zoom('sofa')"></div>
+                <div id="sofa_zoom" class="zoom">
+                    <div id="zoomed_card" class="zoom_objects" onclick="getRoom2Card('open')"></div>
+                    <div id="zoomed_card_active" class="zoom_objects active_objects" onclick="getRoom2Card('close')"></div>
+                </div>
+            </div>
+            <div id="room_3" class="room">
+                <div id="bookshelf" class="click" onclick="zoom('bookshelf')"></div>
+                <div id="bookshelf_zoom" class="zoom">
+                    <div id="zoomed_book" class="zoom_objects" onclick="openRoom3Book('open')"></div>
+                    <div id="zoomed_book_active" class="zoom_objects active_objects" onclick="openRoom3Book('next')"></div>
+                </div>
+                <div id="ash" class="click" onclick="zoom('ash')"></div>
+                <div id="ash_zoom" class="zoom">
+                    <div id="zoomed_ash" class="zoom_objects" onclick="removeRoom3Ash()"></div>
+                </div>
+            </div>
+            <div id="room_4" class="room">
+                <div id="bed" class="click" onclick="zoom('bed')"></div>
+                <div id="bed_zoom" class="zoom">
+                    <div id="zoomed_bed_touch_area" class="zoom_objects" onclick="touchRoom4Bed()"></div>
+                    <div id="zoomed_paper" class="zoom_objects" onclick="openRoom4Paper('open')"></div>
+                    <div id="zoomed_paper_active" class="zoom_obejcts active_objects" onclick="openRoom4Paper('close')"></div>
+                </div>
+                <div id="door" class="click" onclick="zoom('door')"></div>
+                <div id="door_zoom" class="zoom" onclick="openRoom4Door()"></div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/game.js"></script>
+    <script src="assets/js/preload.js"></script>
+
+
+    <audio  src="assets/game/room_1/R1_2_Close_Cat.mp3" id="room_1_cat_sound"></audio>
+    <audio  src="assets/game/room_1/R1_3_Item_Key.mp3" id="room_1_key_sound"></audio>
+    <audio  src="assets/game/room_1/R1_4_Close_Box(1).mp3" id="room_1_close_box_sound"></audio>
+    <audio  src="assets/game/room_1/R1_4_Close_Box(2).mp3" id="room_1_open_box_sound"></audio>
+    <audio  src="assets/game/room_2/R2_3_Item_Broom.mp3" id="room_2_broom_sound"></audio>
+    <audio  src="assets/game/room_2/R2_3_Item_Match.mp3" id="room_2_match_sound"></audio>
+    <audio  src="assets/game/room_2/R2_4_Candle.mp3" id="room_2_candle_sound"></audio>
+    <audio  src="assets/game/room_2/R2_3_Closet.mp3" id="room_2_closet_sound"></audio>
+    <audio  src="assets/game/room_3/R3_1_Close_Book.mp3" id="room_3_book_sound"></audio>
+    <audio  src="assets/game/room_3/R3_2_Close_Ash(1-4).mp3" id="room_3_ash_sound"></audio>
+    <audio  src="assets/game/room_4/R4_0_Full_Bed.mp3" id="room_4_bed_sound"></audio>
+    <audio  src="assets/game/room_4/R4_3_Close_Door.mp3" id="room_4_heart_sound"></audio>
+    <audio  src="assets/game/room_4/R4_3_Close_Door(4).mp3" id="room_4_door_sound"></audio>
+    <audio  src="assets/game/room_4/R4_Door_Closed.mp3" id="room_4_door_closed_sound"></audio>
+    <audio  src="https://moonsomoon.net/assets/game/common/11%20moonsomoon.mp3" id="moonsomoon"></audio>
+    <audio  src="assets/game/common/R_BGM.mp3" id="bgm" loop></audio>
+</body>
+</html>

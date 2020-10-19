@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko-kr">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177457334-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-177457334-1');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no, shrink-to-fit=no" />
+    <meta name="HandheldFriendly" content="true">
+    <!-- Title -->
+    <title>Moonsomoon</title>
+
+    <meta name='description'
+      content='문소문 Heard a rumor' />
+    <meta name='keywords'
+        content='문소문' />
+    
+    <meta property="og:type" content="website">
+    <meta property='og:title'
+        content='Moonsomoon' />
+    <meta property='og:description'
+        content='문소문 Heard a rumor' />
+    <meta property='og:image'
+        content='assets/images/og-image.jpg' />
+
+    <!-- <link rel="canonical" href="https://nickname.hwanmoo.kr" /> -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    
+
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico" />
+
+    <link href="https://vjs.zencdn.net/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.8.2/video.min.js"></script>
+
+    <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
+
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    
+    <div class="mobile-wrap">
+        <div id="toast"></div>
+	    <div class="mobile clearfix">
+            <div class="buttons" onclick="proceed()">
+                <div class="btns" id="btn-tap">
+                    <img src="assets/images/Button_Tap.png" alt="tap">
+                </div>
+                <div class="btns" id="btn-restart">
+                    <img src="assets/images/Button_Restart.png" alt="tap">
+                </div>
+            </div>
+            <div class="container" onclick="proceed()" style="visibility: hidden;">
+                <video
+                    id="player-01"
+                    class="video-js"
+                    controls="false"
+                    preload="auto"
+                    poster="assets/images/intro.jpg"
+                    data-setup='{"controls":false}' playsinline webkit-playsinline >
+                <source src="assets/videos/01.mp4" type="video/mp4"></source>
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">
+                    supports HTML5 video
+                    </a>
+                </p>
+                </video>
+
+                <video
+                    id="player-02"
+                    class="video-js"
+                    controls="false"
+                    preload="auto"
+                    poster="assets/images/01-end.jpg"
+                    data-setup='{"controls":false}' playsinline webkit-playsinline>
+                <source src="assets/videos/02.mp4" type="video/mp4"></source>
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">
+                    supports HTML5 video
+                    </a>
+                </p>
+                </video>
+
+                <video
+                    id="player-03"
+                    class="video-js"
+                    controls="false"
+                    preload="auto"
+                    poster="assets/images/02-end.jpg"
+                    data-setup='{"controls":false}' playsinline webkit-playsinline>
+                <source src="assets/videos/03.mp4" type="video/mp4"></source>
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">
+                    supports HTML5 video
+                    </a>
+                </p>
+                </video>
+
+                <video
+                    id="player-04_pre"
+                    class="video-js"
+                    controls="false"
+                    preload="auto"
+                    poster="assets/images/03-end.jpg"
+                    data-setup='{"controls":false}' playsinline webkit-playsinline>
+                <source src="assets/videos/04_pre.mp4" type="video/mp4"></source>
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">
+                    supports HTML5 video
+                    </a>
+                </p>
+                </video>
+
+                <video
+                    id="player-01-re"
+                    class="video-js"
+                    controls="false"
+                    preload="auto"
+                    poster="assets/images/04_pre-end.jpg"
+                    data-setup='{"controls":false}' playsinline webkit-playsinline>
+                <source src="assets/videos/01.mp4" type="video/mp4"></source>
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">
+                    supports HTML5 video
+                    </a>
+                </p>
+                </video>
+
+                <video
+                    id="player-04"
+                    class="video-js"
+                    controls="false"
+                    preload="auto"
+                    poster="assets/images/03-end.jpg"
+                    data-setup='{"controls":false}' playsinline webkit-playsinline>
+                <source src="assets/videos/04.mp4" type="video/mp4"></source>
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">
+                    supports HTML5 video
+                    </a>
+                </p>
+                </video>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

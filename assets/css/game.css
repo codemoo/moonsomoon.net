@@ -1,0 +1,564 @@
+#game {
+    position: relative;
+}
+
+#game > * {
+    background-repeat: no-repeat;
+}
+#game .click {
+    cursor: pointer;
+    z-index:9;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#game .room {
+    width:100%;
+    height:100%;
+    background-repeat: no-repeat;
+    position:absolute;
+    visibility: hidden;
+}
+#game .zoom {
+    z-index: 10;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#game .zoom .zoom_objects {
+    z-index: 11;
+    position: absolute;
+    background-size: contain;
+    visibility: hidden;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+#game #common {
+    position:absolute;
+    z-index:9;
+}
+#game #common #item_slot {
+    margin:1.2%;width:30%;background-image: url('../game/common/R_ltem_slot.png');background-repeat: no-repeat;height:100px;background-size:contain;right:0;position: absolute;
+}
+#game #common #left_handle {
+    background-image: url('../game/common/R_left.png');
+    left:1.2%;
+}
+#game #common #right_handle {
+    background-image: url('../game/common/R_right.png');
+    right:1.2%;
+}
+#game #common .handle {
+    width: 7.2%;
+    height:72px;
+    position: absolute;
+    top:45%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor:pointer;
+}
+#game #common #item_slot .item {
+    height: 60%;
+    width: 21.3%;
+    background-size: 100%;
+    position: absolute;
+    top: 17%;
+    left: 7.3%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display:none;
+}
+
+#game #common #item_slot #item_broom {
+    background-image: url(../game/room_2/R2_2_Item_Broom.png);
+}
+#game #common #item_slot #item_match {
+    background-image: url(../game/room_2/R2_3_item_match.png);
+}
+#game #common #item_slot #item_key {
+    background-image: url(../game/room_1/R1_3_Item_Key\(2\).png);
+}
+#game #back_container {
+    position:absolute;
+    z-index:9;
+}
+#game #back {
+    width: 7.2%;
+    height:72px;
+    position: absolute;
+    /* /* top:3%; */
+    /* left:2.3%; */
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor:pointer;
+    background-image: url(../game/common/Back_Button.png);
+    z-index:999;
+    visibility: hidden;
+}
+/* --------------- */
+/* Room 1 */
+#game #room_1 {background-image: url(../game/room_1/R1_0_Full_Room.jpg);}
+
+#game #room_1 #computer {
+    width: 37.1%;
+    height: 62.8%;
+    background-image: url(../game/room_1/R1_0_Full_Computer.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 9.5%;
+    left:31.45%
+}
+
+#game #room_1 #computer.play {
+    background-image: url(../game/room_1/R1_0_Full_Computer\(redmonitor\).png);
+}
+
+#game #room_1 #computer_zoom {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background-image: url(../game/room_1/R1_1_Close_Computer.jpg)
+}
+
+#game #room_1 #computer_zoom.play {
+    background-image: url(../game/room_1/R1_1_Close_Computer_Play.jpg)
+}
+
+#game #room_1 #computer_zoom input {
+    border: 0;
+    outline: none;
+    background-color: rgb(192,189,199);
+    position: absolute;
+    top:45%;
+    left:42%;
+    font-size:1.8em;
+    width:19%;
+    padding:0.2em;
+}
+
+#game #room_1 #cat_with_key {
+    width: 20.4%;
+    height: 33.3%;
+    background-image: url(../game/room_1/R1_0_Full_Cat\(with\ Key\).png);
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 9.5%;
+    left:10%
+}
+
+#game #room_1 #cat_with_key.no_key {
+    background-image: url(../game/room_1/R1_0_Full_Cat\(without\ Key\).png);
+}
+
+#game #room_1 #cat_zoom {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background-image: url(../game/room_1/R1_2_Close_Cat\(0\).jpg)
+}
+
+#game #room_1 #zoomed_cat {
+    width: 49.7%;
+    height: 97.9%;
+    left:17%;
+    background-image: url(../game/room_1/R1_2_Close_Cat\(1\).png)
+}
+
+#game #room_1 #zoomed_key {
+    width: 9.4%;
+    height: 17.3%;
+    left:52.3%;
+    bottom:5.6%;
+    background-image: url(../game/room_1/R1_3_Item_Key\(1\).png)
+}
+
+#game #room_1 #box_closed {
+    width: 13.5%;
+    height: 20%;
+    background-image: url(../game/room_1/R1_0_Full_Box\(close\).png);
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 9.5%;
+    right:16%
+}
+
+#game #room_1 #box_zoom {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background-image: url(../game/room_1/R1_4_Close_Box\(0\).jpg)
+}
+
+#game #room_1 #zoomed_box_closed {
+    width: 74.2%;
+    height: 97.6%;
+    left:15%;
+    bottom:0%;
+    background-image: url(../game/room_1/R1_4_Close_Box\(1\).png)
+}
+
+#game #room_1 #zoomed_box_closed.open {
+    background-image: url(../game/room_1/R1_4_Close_Box\(2\).png)
+}
+
+#game #room_1 #zoomed_box_active {
+    width: 100%;
+    height: 100%;
+    left:0%;
+    bottom:0%;
+    background-image: url(../game/room_1/R1_5_Close_Note.jpg);
+    display:none;
+}
+
+/* --------------- */
+/* Room 2 */
+
+#game #room_2 {
+    background-image: url(../game/room_2/R2_0_Full_\ room.jpg);   
+}
+
+#game #room_2 #closet {
+    width: 48.7%;
+    height: 45.3%;
+    background-image: url(../game/room_2/R2_0_Full_Closet\(close\).png);
+    visibility: hidden;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 9.8%;
+    left:14.45%
+}
+#game #room_2 #closet.open {
+    background-image: url(../game/room_2/R2_0_Full_Closet\(open\).png) !important;
+}
+#game #room_2 #broom {
+    width: 19.4%;
+    height: 57%;
+    background-image: url(../game/room_2/R2_0_Full_Broom.png);
+    visibility: hidden;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 3.8%;
+    left:25.45%
+}
+#game #room_2 #candle {
+    width: 12.1%;
+    height: 28.6%;
+    background-image: url(../game/room_2/R2_0_Full_Candle.png);
+    visibility: hidden;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 48.8%;
+    left:20.45%
+}
+
+#game #room_2 #candle.light {
+    background-image: url(../game/room_2/R2_0_Full_Candle\(Light\).png);
+}
+
+#game #room_2 #closet_zoom {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background-image: url(../game/room_2/R2_3_Close_Closet.jpg);
+}
+
+#game #room_2 #candle_zoom {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background-image: url(../game/room_2/R2_4_Close_Candle\(1\).jpg);
+}
+
+#game #room_2 #zoomed_closet {
+    width: 100%;
+    height: 100%;
+    left:0%;
+    bottom:0%;
+    background-image: url(../game/room_2/R2_3_Close_Closet\(1\).png);
+}
+
+
+#game #room_2 #zoomed_candle {
+    width: 11.6%;
+    height: 60.4%;
+    left:41%;
+    bottom:7%;
+    background-image: url(../game/room_2/R2_4_Close_Candle\(2\).png);
+}
+
+#game #room_2 #zoomed_candle_active {
+    width: 14.7%;
+    height: 21%;
+    left:39%;
+    bottom:59%;
+    background-image: url(../game/room_2/R2_4_Close_Candle\(3\).png);
+    display:none;
+}
+
+#game #room_2 #zoomed_closet.open {
+    background-image: url(../game/room_2/R2_3_Close_Closet\(2\).png);
+}
+
+#game #room_2 #zoomed_match {
+    width: 24.4%;
+    height: 22.3%;
+    left:53%;
+    bottom:24%;
+    background-image: url(../game/room_2/R2_3_Close_Match.png);
+    display:none;
+}
+
+#game #room_2 #sofa {
+    width: 32.8%;
+    height: 46.1%;
+    background-image: url(../game/room_2/R2_0_Full_Sofa.png);
+    visibility: hidden;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 3.5%;
+    right: 6%;
+}
+
+#game #room_2 #sofa_zoom {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background-image: url(../game/room_2/R2_1_Close_Sofa.jpg);
+}
+
+#game #room_2 #zoomed_card {
+    width: 13.8%;
+    height: 13.9%;
+    left:41.6%;
+    bottom:34%;
+    background-image: url(../game/room_2/R2_1_Close_Postcard.png);
+}
+
+#game #room_2 #zoomed_card_active {
+    width: 100%;
+    height: 100%;
+    left:0%;
+    bottom:0%;
+    background-image: url(../game/room_2/R2_1_Close_Postcard\(2\).jpg);
+    display:none;
+}
+
+
+/* --------------- */
+/* Room 3 */
+#game #room_3 {
+    background-image: url(../game/room_3/R3_0_Full_Room.jpg);
+    
+}
+
+#game #room_3 #bookshelf {
+    width: 26.4%;
+    height: 22.7%;
+    background-image: url(../game/room_3/R3_0_Full_Room_Book.png);
+    visibility: hidden;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 17.5%;
+    right: 11%;
+}
+
+#game #room_3 #bookshelf_zoom {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background-image: url(../game/room_3/R3_1_Close_Book.jpg);
+}
+
+#game #room_3 #zoomed_book {
+    width: 8.8%;
+    height: 40.3%;
+    left:45.6%;
+    bottom:34%;
+    background-image: url(../game/room_3/R3_1_Close_Book.png);
+}
+
+#game #room_3 #zoomed_book_active {
+    width: 100%;
+    height: 100%;
+    left:0%;
+    bottom:0%;
+    background-image: url(../game/room_3/R3_1_Close_Book\(0\).png);
+    display: none;
+}
+
+#game #room_3 #zoomed_book_active.page_1 {
+    background-image: url(../game/room_3/R3_1_Close_Book\(1\).png);
+}
+#game #room_3 #zoomed_book_active.page_2 {
+    background-image: url(../game/room_3/R3_1_Close_Book\(2\).png);
+}
+#game #room_3 #zoomed_book_active.page_3 {
+    background-image: url(../game/room_3/R3_1_Close_Book\(3\).png);
+}
+#game #room_3 #zoomed_book_active.page_4 {
+    background-image: url(../game/room_3/R3_1_Close_Book\(4\).png);
+}
+#game #room_3 #zoomed_book_active.page_5 {
+    background-image: url(../game/room_3/R3_1_Close_Book\(5\).png);
+}
+
+#game #room_3 #ash {
+    width: 36.1%;
+    height: 35.1%;
+    background-image: url(../game/room_3/R3_0_Full_Room_Ash.png);
+    visibility: hidden;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 1.5%;
+    left: 11%;
+}
+
+#game #room_3 #ash.remove {
+    background-image: none;
+}
+
+#game #room_3 #ash_zoom {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background-image: url(../game/room_3/R3_2_Close_Ash.jpg);
+}
+
+#game #room_3 #zoomed_ash {
+    width: 100%;
+    height: 100%;
+    left:0%;
+    bottom:0%;
+    background-image: url(../game/room_3/R3_2_Close_Ash\(1\).png);
+    /* display: none; */
+}
+
+#game #room_3 #zoomed_ash.level_2 {
+    background-image: url(../game/room_3/R3_2_Close_Ash\(2\).png);
+}
+
+#game #room_3 #zoomed_ash.level_3 {
+    background-image: url(../game/room_3/R3_2_Close_Ash\(3\).png);
+}
+
+#game #room_3 #zoomed_ash.level_4 {
+    background-image: url(../game/room_3/R3_2_Close_Ash\(4\).png);
+}
+
+#game #room_3 #zoomed_ash.level_5 {
+    background-image: url(../game/room_3/R3_2_Close_Ash\(5\).png);
+}
+
+
+/* --------------- */
+/* Room 4 */
+#game #room_4 {
+    background-image: url(../game/room_4/R4_0_Full_Room.jpg);
+}
+
+#game #room_4 #bed {
+    width: 41.9%;
+    height: 56.7%;
+    background-image: url(../game/room_4/R4_0_Full_Bed\(1\).png);
+    visibility: hidden;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0%;
+    left: 12%;
+}
+
+#game #room_4 #bed.touch {
+    background-image: url(../game/room_4/R4_0_Full_Bed\(2\)\ .png);
+}
+
+#game #room_4 #bed_zoom {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background-image: url(../game/room_4/R4_1_Close_Bed.jpg);
+    /* display: none; */
+}
+
+#game #room_4 #bed_zoom.touch {
+    background-image: url(../game/room_4/R4_1_Close_Bed\(2\).jpg);
+}
+
+#game #room_4 #zoomed_bed_touch_area {
+    width: 20%;
+    height: 20%;
+    right:7%;
+    top:43%;
+    visibility: hidden;
+    /* display: none; */
+}
+
+#game #room_4 #door {
+    width: 28.7%;
+    height: 68.3%;
+    background-image: url(../game/room_4/R4_0_Full_Door.png);
+    visibility: hidden;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 14%;
+    right: 12%;
+}
+
+#game #room_4 #door_zoom {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background-image: url(../game/room_4/R4_2_Close_Door.jpg);
+    cursor: pointer;
+    /* display: none; */
+}
+
+#game #room_4 #door_zoom.play {
+    background-image: url(../game/room_4/R4_2_Close_Door_Red.jpg);
+}
+
+#game #room_4 #zoomed_paper {
+    width: 17.6%;
+    height: 15.6%;
+    left:64.6%;
+    bottom:35%;
+    background-image: url(../game/room_4/R4_1_Close_Bed_Paper.png);
+    display:none;
+}
+
+#game #room_4 #zoomed_paper_active {
+    width: 100%;
+    height: 100%;
+    left:0%;
+    bottom:0%;
+    background-image: url(../game/room_4/R4_1_Close_Bed_Paper\(2\).png);
+    display: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+    cursor: pointer;
+}
+
+#game #room_4 #door.play {
+    background-image: url(../game/room_4/R4_0_Full_Door\(redmonitor\).png);
+}
+
+#game #room_4 #door_zoom.step_1 {
+    background-image: url(../game/room_4/R4_3_Close_Door.jpg);
+}
+
+#game #room_4 #door_zoom.step_2 {
+    background-image: url(../game/room_4/R4_3_Close_Door\(2\).jpg);
+}
+
+#game #room_4 #door_zoom.step_3 {
+    background-image: url(../game/room_4/R4_3_Close_Door\(3\).jpg);
+}
+
+#game #room_4 #door_zoom.step_4 {
+    background-image: url(../game/room_4/R4_3_Close_Door\(4\).jpg);
+}
+
+#game #room_4 #door_zoom.step_5 {
+    background-image: url(../game/room_4/R4_3_Close_Door\(5\).jpg);
+}
